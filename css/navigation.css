@@ -1,0 +1,142 @@
+#main_logo {
+   float: left;
+   padding: 10px 10px;
+   margin: 5px 0;
+   border: solid thin;
+   border-color: white;
+   color: white;
+   text-decoration: none;
+   text-transform: uppercase;
+   position: fixed;
+   z-index: 1;
+   left: 300px;
+   mix-blend-mode: difference;
+}
+.bar {
+   width: 100%;
+   left: 0px;
+}
+.navbar {
+   width: 80%;
+   margin: 0 auto;
+}
+header {
+   background: black;
+   text-decoration: none;
+}
+header::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+.computer-nav {
+   float: right;
+}
+.computer-nav ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+.computer-nav li {
+   display: inline-block;
+   margin-left: 70px;
+   padding-top: 23px;
+   position: relative;
+}
+.computer-nav a, .computer-nav div a {
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 14px;
+   color: white;
+}
+.computer-nav a::before {
+   content: "";
+   display: block;
+   height: 5px;
+   width: 100%;
+   background-color: white;
+   position: absolute;
+   top: 0;
+   width: 0%;
+}
+.computer-nav a:hover::before {
+   width: 100%;
+   transition: all ease-in-out 500ms;
+}
+.phone-nav {
+   position: absolute;
+   margin-right: 8px; /*page's margin is 8px*/
+   top: 0%;
+   right: 0%;
+   background: #464655;
+   /*height: 0px;
+   overflow: hidden;*/
+   clip-path: circle(0px at top right);
+   transition: all ease-in-out 500ms;
+}
+.phone-nav ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+.phone-nav li {
+   border-bottom: 1px solid #575766;
+}
+.phone-nav li:last-child {
+   border-bottom: none;
+}
+.phone-nav a {
+   color: #EBEBD3;
+   display: block;
+   padding: 2em 6em;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+.phone-nav a:hover, .phone-nav a:focus {
+   background: #E4B363;
+   color: #464655;
+}
+.menu-toggle {
+   padding: 1em;
+   position: absolute;
+   right: .5em;
+   cursor: pointer;
+}
+.hamburger, .hamburger::before, .hamburger::after {
+   content: "";
+   display: block;
+   background: #EBEBD3;
+   height: 3px;
+   width: 1.75em;
+   border-radius: 10px;
+   transition: all ease-in-out 500ms;
+}
+.hamburger::before {
+   transform: translateY(-6px);
+}
+.hamburger::after {
+   transform: translateY(3px);
+}
+.site-nav--open {
+   /*height: auto;*/
+   clip-path: circle(100%);
+}
+.open .hamburger {
+   transform: rotate(45deg);
+}
+.open .hamburger::before {
+   opacity: 0;
+}
+.open .hamburger::after {
+   transform: translateY(-3px) rotate(-90deg);
+}
+@media (min-width: 770px) {
+   .menu-toggle {
+      display: none;
+   }
+}
+@media (max-width: 769px) {
+   .computer-nav {
+      display: none;
+   }
+}
